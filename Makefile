@@ -1,5 +1,5 @@
 LDFLAGS=-lm
-CFLAGS=-Werror -O3
+CFLAGS=-Werror -Wno-unused-value -O3
 
 default:
 	@echo "make bin           makes 3-bit, 4-bit ... 19-bit maximal LFSR binaries"
