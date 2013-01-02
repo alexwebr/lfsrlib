@@ -20,7 +20,7 @@ int main()
   lfsr_load(state, ${1}, 1);
   size_t taps[] = LFSR_MAXIMAL${1};
   while (1) {
-    printf("%u\n", lfsr_dump(state, ${1}));
+    printf("%lu\n", lfsr_dump(state, ${1}));
     lfsr_shift(state, ${1}, lfsr_xor_taps(state, ${1}, taps, sizeof(taps) / sizeof(size_t)));
   }
 }
