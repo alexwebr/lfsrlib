@@ -7,7 +7,7 @@
 // au_init declares some variables that are used for storing passed and failed counts.
 // Strictly speaking, au_end is not necessary - it simply prints the passed and failed stats and then returns an integer.
 // If any tests fail, au_end returns 0, otherwise it returns 1 to indicate complete success.
-#define au_init unsigned long int au_tests_run = 0, au_tests_failed = 0; puts("");
+#define au_init unsigned int au_tests_run = 0, au_tests_failed = 0; puts("");
 #define au_end printf("\n   [36m%u[0m tests run - ", au_tests_run); if (au_tests_failed == 0) { puts("[32mall tests passed[0m\n"); return 0; } else { printf("[31;1m%u test(s) failed\n[0m\n", au_tests_failed); return 1; }
 
 // If you are using a standalone unit test file with no main(), use these macros.
