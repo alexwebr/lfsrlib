@@ -41,7 +41,7 @@ unsigned long int lfsr_dump(enum lfsr_bit_t *state, size_t state_length)
   size_t i;
   unsigned long int result = 0;
   for (i = 0; i < state_length; ++i)
-    result += (state[i] == ON) ? powl(2, i) : 0;
+    result += (state[i] == ON) ? pow(2, i) : 0;
   return result;
 }
 
@@ -49,7 +49,7 @@ void lfsr_load(enum lfsr_bit_t *state, size_t state_length, unsigned long int se
 {
   long int i;
   for (i=state_length-1; i >= 0; --i) {
-    unsigned long int power = powl(2, i);
+    unsigned long int power = pow(2, i);
     if (seed >= power) {
       state[i] = ON;
       seed -= power;
