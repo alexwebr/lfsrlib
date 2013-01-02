@@ -90,22 +90,22 @@ au_main
 
 { // Test for dump, all bits off
   enum lfsr_bit_t state[8] = {OFF, OFF, OFF, OFF, OFF, OFF, OFF, OFF};
-  au_eq("dump 0", lfsr_dump(state, 8), 0);
+  au_eq("dump 0", (unsigned int) lfsr_dump(state, 8), 0);
 }
 
 { // Test for dump, low bit on
   enum lfsr_bit_t state[] = {ON, OFF, OFF, OFF, OFF, OFF, OFF, OFF};
-  au_eq("dump 1", lfsr_dump(state, 8), 1);
+  au_eq("dump 1", (unsigned int) lfsr_dump(state, 8), 1);
 }
 
 { // Test for dump, two bits on
   enum lfsr_bit_t state[] = {ON, OFF, ON, OFF, OFF, OFF, OFF, OFF};
-  au_eq("dump 5", lfsr_dump(state, 8), 5);
+  au_eq("dump 5", (unsigned int) lfsr_dump(state, 8), 5);
 }
 
 { // Test for dump, only the highest bit is set
   enum lfsr_bit_t state[] = {OFF, OFF, OFF, OFF, OFF, OFF, OFF, ON};
-  au_eq("dump 128", lfsr_dump(state, 8), 128);
+  au_eq("dump 128", (unsigned int) lfsr_dump(state, 8), 128);
 }
 
 { // test for load, where not all bits are set
@@ -151,19 +151,19 @@ au_main
 { // general round-trip test for 8-bit register
   enum lfsr_bit_t state[8];
   lfsr_load(state, 8, 203);
-  au_eq("load + dump round trip, 8 bit", lfsr_dump(state, 8), 203);
+  au_eq("load + dump round trip, 8 bit", (unsigned int) lfsr_dump(state, 8), 203);
 }
 
 { // general round-trip test for 16-bit register
   enum lfsr_bit_t state[16];
   lfsr_load(state, 16, 6003);
-  au_eq("load + dump round trip, 16 bit", lfsr_dump(state, 16), 6003);
+  au_eq("load + dump round trip, 16 bit", (unsigned int) lfsr_dump(state, 16), 6003);
 }
 
 { // general round-trip test for 32-bit register
   enum lfsr_bit_t state[32];
   lfsr_load(state, 32, 90003);
-  au_eq("load + dump round trip, 32 bit", lfsr_dump(state, 32), 90003);
+  au_eq("load + dump round trip, 32 bit", (unsigned int) lfsr_dump(state, 32), 90003);
 }
 
 au_endmain
