@@ -2,7 +2,7 @@
 #ifndef LFSR_H_INCLUDED
 #define LFSR_H_INCLUDED
 
-// Maximal LSFR feedback polynomials taken from from
+// Maximal LSFR feedback polynomials taken from
 // https://en.wikipedia.org/wiki/Linear_feedback_shift_register
 #define LFSR_MAXIMAL3   {3, 2}
 #define LFSR_MAXIMAL4   {4, 3}
